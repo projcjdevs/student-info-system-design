@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Student Information System - shared design resources
+    (colors, theme, reusable styles, text, and dropdown choices)
+    Put this file in: app/src/main/res/values/sis_resources.xml
+-->
+<resources>
+
+    <!-- ===================== COLORS ===================== -->
+    <color name="sis_primary">#1A3A6B</color>          <!-- deep navy -->
+    <color name="sis_primary_light">#2F5DA8</color>    <!-- lighter navy for gradient -->
+    <color name="sis_primary_container">#DCE6F7</color><!-- pale blue -->
+    <color name="sis_accent">#F2B705</color>           <!-- school gold -->
+    <color name="sis_background">#F4F6FB</color>
+    <color name="sis_surface">#FFFFFF</color>
+    <color name="sis_text_primary">#1B1F2A</color>
+    <color name="sis_text_secondary">#5E6577</color>
+    <color name="sis_outline">#C9D1E0</color>
+    <color name="sis_white">#FFFFFF</color>
+    <color name="sis_white_80">#CCFFFFFF</color>
+
+    <!-- ===================== THEME ===================== -->
+    <!-- Applied to the root of each screen with android:theme="@style/Theme.SIS" -->
+    <style name="Theme.SIS" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/sis_primary</item>
+        <item name="colorOnPrimary">@color/sis_white</item>
+        <item name="colorPrimaryContainer">@color/sis_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/sis_primary</item>
+        <item name="colorSecondaryContainer">@color/sis_primary_container</item>
+        <item name="colorOnSecondaryContainer">@color/sis_primary</item>
+        <item name="colorSurface">@color/sis_surface</item>
+        <item name="colorOnSurface">@color/sis_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/sis_text_secondary</item>
+        <item name="colorOutline">@color/sis_outline</item>
+        <item name="colorSurfaceContainer">@color/sis_surface</item>
+        <item name="colorSurfaceContainerLow">@color/sis_surface</item>
+        <item name="colorSurfaceContainerHigh">@color/sis_surface</item>
+        <item name="android:colorBackground">@color/sis_background</item>
+    </style>
+
+    <!-- ===================== REUSABLE STYLES ===================== -->
+
+    <!-- White rounded card used for each section -->
+    <style name="SIS.Card" parent="Widget.Material3.CardView.Outlined">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardBackgroundColor">@color/sis_surface</item>
+        <item name="strokeColor">@color/sis_outline</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Outlined text box -->
+    <style name="SIS.TextField" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <!-- Outlined dropdown (exposed dropdown menu) -->
+    <style name="SIS.Dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <!-- Section heading text, e.g. "Student Name" -->
+    <style name="SIS.SectionTitle" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textColor">@color/sis_primary</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Small icon inside a pale circle, shown beside section headings -->
+    <style name="SIS.SectionIcon" parent="">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/sis_circle_light</item>
+        <item name="tint">@color/sis_primary</item>
+    </style>
+
+    <!-- ===================== TEXT ===================== -->
+    <string name="sis_app_title">Student Information System</string>
+    <string name="sis_login_subtitle">Sign in to your account</string>
+    <string name="sis_welcome">Welcome back!</string>
+    <string name="sis_welcome_hint">Please enter your username and password.</string>
+    <string name="sis_username">Username</string>
+    <string name="sis_password">Password</string>
+    <string name="sis_remember_me">Remember me</string>
+    <string name="sis_forgot_password">Forgot password?</string>
+    <string name="sis_login">Log In</string>
+    <string name="sis_footer">Application Development • Student Information System</string>
+
+    <string name="sis_student_info_title">Student Information</string>
+    <string name="sis_new_record">New Student Record</string>
+    <string name="sis_new_record_hint">Fill in the details below to register a student.</string>
+    <string name="sis_back">Back</string>
+
+    <string name="sis_section_number">Student Number</string>
+    <string name="sis_student_number">Student Number</string>
+    <string name="sis_student_number_helper">Example: 2026-00123</string>
+
+    <string name="sis_section_name">Student Name</string>
+    <string name="sis_last_name">Last Name</string>
+    <string name="sis_first_name">First Name</string>
+    <string name="sis_middle_name">Middle Name</string>
+    <string name="sis_middle_name_helper">Leave blank if not applicable</string>
+
+    <string name="sis_section_academic">Academic Information</string>
+    <string name="sis_program">Program</string>
+    <string name="sis_specialization">Specialization</string>
+    <string name="sis_specialization_helper">If applicable</string>
+    <string name="sis_year_level">Year Level</string>
+    <string name="sis_year_1">1st Year</string>
+    <string name="sis_year_2">2nd Year</string>
+    <string name="sis_year_3">3rd Year</string>
+    <string name="sis_year_4">4th Year</string>
+
+    <string name="sis_clear">Clear</string>
+    <string name="sis_save">Save</string>
+
+    <!-- ===================== DROPDOWN CHOICES ===================== -->
+    <string-array name="sis_programs">
+        <item>BS Information Technology (BSIT)</item>
+        <item>BS Computer Science (BSCS)</item>
+        <item>BS Information Systems (BSIS)</item>
+        <item>BS Entertainment and Multimedia Computing (BSEMC)</item>
+        <item>BS Computer Engineering (BSCpE)</item>
+        <item>BS Business Administration (BSBA)</item>
+        <item>BS Accountancy (BSA)</item>
+        <item>Bachelor of Secondary Education (BSEd)</item>
+        <item>BS Nursing (BSN)</item>
+    </string-array>
+
+    <string-array name="sis_specializations">
+        <item>None / Not Applicable</item>
+        <item>Web and Mobile Application Development</item>
+        <item>Network and Cybersecurity</item>
+        <item>Data Science and Analytics</item>
+        <item>Game Development</item>
+        <item>Digital Arts and Animation</item>
+        <item>Marketing Management</item>
+        <item>Financial Management</item>
+        <item>Major in Mathematics</item>
+        <item>Major in English</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SCREEN 2: STUDENT INFORMATION
+    Replaces: app/src/main/res/layout/activity_student_info.xml
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sis_primary"
+    android:orientation="vertical"
+    android:theme="@style/Theme.SIS"
+    tools:context=".StudentInfoActivity">
+
+    <!-- ============ TOP BAR ============ -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/sis_primary"
+        app:navigationContentDescription="@string/sis_back"
+        app:navigationIcon="@drawable/ic_sis_arrow_back"
+        app:navigationIconTint="@color/sis_white"
+        app:title="@string/sis_student_info_title"
+        app:titleTextColor="@color/sis_white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/sis_background"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ============ PROFILE SUMMARY ============ -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SIS.Card"
+                app:cardBackgroundColor="@color/sis_primary_container"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <FrameLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/sis_circle_white">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/sis_new_record"
+                            android:src="@drawable/ic_sis_person"
+                            app:tint="@color/sis_primary" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sis_new_record"
+                            android:textColor="@color/sis_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/sis_new_record_hint"
+                            android:textColor="@color/sis_text_secondary"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ SECTION 1: STUDENT NUMBER ============ -->
+            <com.google.android.material.card.MaterialCardView style="@style/SIS.Card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            style="@style/SIS.SectionIcon"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_sis_badge" />
+
+                        <TextView
+                            style="@style/SIS.SectionTitle"
+                            android:text="@string/sis_section_number" />
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_student_number"
+                        style="@style/SIS.TextField"
+                        android:hint="@string/sis_student_number"
+                        app:helperText="@string/sis_student_number_helper"
+                        app:startIconDrawable="@drawable/ic_sis_badge">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_student_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789-"
+                            android:importantForAutofill="no"
+                            android:inputType="phone"
+                            android:maxLength="15"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ SECTION 2: STUDENT NAME ============ -->
+            <com.google.android.material.card.MaterialCardView style="@style/SIS.Card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            style="@style/SIS.SectionIcon"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_sis_person" />
+
+                        <TextView
+                            style="@style/SIS.SectionTitle"
+                            android:text="@string/sis_section_name" />
+                    </LinearLayout>
+
+                    <!-- Last Name -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_last_name"
+                        style="@style/SIS.TextField"
+                        android:hint="@string/sis_last_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_last_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="textPersonName|textCapWords"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- First Name -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_first_name"
+                        style="@style/SIS.TextField"
+                        android:hint="@string/sis_first_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_first_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="textPersonName|textCapWords"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Middle Name -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_middle_name"
+                        style="@style/SIS.TextField"
+                        android:hint="@string/sis_middle_name"
+                        app:helperText="@string/sis_middle_name_helper">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_middle_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:importantForAutofill="no"
+                            android:inputType="textPersonName|textCapWords"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ SECTION 3: ACADEMIC INFORMATION ============ -->
+            <com.google.android.material.card.MaterialCardView style="@style/SIS.Card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            style="@style/SIS.SectionIcon"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_sis_school" />
+
+                        <TextView
+                            style="@style/SIS.SectionTitle"
+                            android:text="@string/sis_section_academic" />
+                    </LinearLayout>
+
+                    <!-- Program (dropdown; choices come from @array/sis_programs) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_program"
+                        style="@style/SIS.Dropdown"
+                        android:hint="@string/sis_program">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/act_program"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            app:simpleItems="@array/sis_programs" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Specialization (dropdown; choices come from @array/sis_specializations) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_specialization"
+                        style="@style/SIS.Dropdown"
+                        android:hint="@string/sis_specialization"
+                        app:helperText="@string/sis_specialization_helper">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/act_specialization"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            app:simpleItems="@array/sis_specializations" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Year Level (tap one chip) -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/sis_year_level"
+                        android:textColor="@color/sis_text_secondary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/cg_year_level"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:chipSpacingHorizontal="8dp"
+                        app:selectionRequired="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_year_1"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/sis_year_1" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_year_2"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sis_year_2" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_year_3"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sis_year_3" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_year_4"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sis_year_4" />
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ BUTTONS (design only, no actions) ============ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_clear"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:text="@string/sis_clear"
+                    android:textSize="16sp"
+                    app:cornerRadius="14dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_save"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:text="@string/sis_save"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="14dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
