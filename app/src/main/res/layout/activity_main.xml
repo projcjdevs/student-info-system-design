@@ -132,6 +132,7 @@
                             android:id="@+id/et_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:imeOptions="actionDone"
                             android:importantForAutofill="no"
                             android:inputType="textPassword"
                             android:maxLines="1" />
